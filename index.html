@@ -1,5 +1,13 @@
 <html ng-app="todomvc">
-  <head><title>angular study</title></head>
+  <head>
+    <title>angular study</title>
+    <meta charset="utf-8">
+    <style>
+      input[type="text"].ng-invalid.ng-dirty {
+        background-color: red;
+      }
+    </style>
+  </head>
   <body ng-controller="TodoCtrl">
     <todo-form on-create="create(title)"></todo-form>
     <todo-list data="todos" on-remove="remove(todo)" stat="status"></todo-list>

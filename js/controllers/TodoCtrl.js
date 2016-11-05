@@ -1,8 +1,23 @@
 angular.module('todomvc').controller('TodoCtrl', function($scope) {
   $scope.todos = [
-    {id: 1, title: 'angular study', done: false},
-    {id: 2, title: 'cleaning room', done: true},
-    {id: 3, title: 'yoga', done: false}
+    {
+      id: 1,
+      title: 'angular study',
+      done: false,
+      createdAt: Date.now() - 3600 * 1000
+    },
+    {
+      id: 2,
+      title: 'cleaning room',
+      done: true,
+      createdAt: Date.now() - 3600 * 2000
+    },
+    {
+      id: 3,
+      title: 'yoga',
+      done: false,
+      createdAt: Date.now() - 3600 * 3000
+    }
   ];
 
   $scope.remove = (todo) => {

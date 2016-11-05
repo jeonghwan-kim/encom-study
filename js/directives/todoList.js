@@ -1,3 +1,6 @@
+https://github.com/jeonghwan-kim/encom-study
+
+
 angular.module('todomvc').directive('todoList', () => {
   return {
     restrict: 'E',

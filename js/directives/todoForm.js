@@ -11,7 +11,8 @@ angular.module('todomvc').directive('todoForm', ($http) => {
                ng-model="newTodoTitle"
                ng-minlength="3"
                ng-required="true"
-               todo-text />
+               todo-text
+               ng-trim="true" />
          <input type="submit" value="Add" ng-disabled="!todoForm.title.$modelValue" />
       </form>
       <p ng-if="todoForm.title.$error.minlength">3자리 이상 입력하세요.</p>

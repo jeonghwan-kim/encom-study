@@ -1,6 +1,11 @@
 angular.module('todomvc')
 .controller('TodoCtrl', function($scope, $routeParams, $location, todoStorage) {
   $scope.todos = todoStorage.get();
+  $scope.remove = todoStorage.remove;
+  $scope.create = todoStorage.create;
+  $scope.update = todoStorage.update;
+
+  $scope.status = {};
 
   if ($routeParams.filter === 'pending') {
     $scope.status = {done: false};
@@ -9,19 +14,4 @@ angular.module('todomvc')
   } else {
     $location.path('/');
   }
-
-  $scope.remove = (todo) => {
-    angular.copy(
-      $scope.todos.filter(t => t.id !== todo.id),
-      $scope.todos);
-  };
-
-  $scope.create = (newTodoTitle) => {
-    if (!newTodoTitle && !newTodoTitle.trim().length) return;
-    $scope.todos.push({
-      id: Date.now(),
-      title: newTodoTitle,
-      done: false
-    });
-  };
 });

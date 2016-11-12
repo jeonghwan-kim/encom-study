@@ -1,2 +1,5 @@
 <todo-form on-create="create(title)"></todo-form>
-<todo-list data="todos" on-remove="remove(todo)" stat="status"></todo-list>
+<todo-list data="todos"
+           stat="status"
+           on-remove="remove(todo)"
+           on-update="update(todo)"></todo-list>

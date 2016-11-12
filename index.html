@@ -8,12 +8,19 @@
       }
     </style>
   </head>
-  <body ng-controller="TodoCtrl">
-    <todo-form on-create="create(title)"></todo-form>
-    <todo-list data="todos" on-remove="remove(todo)" stat="status"></todo-list>
-    <todo-filters data-stat="status"></todo-filters>
+  <body>
+    <header>
+      <h1>Todo App</h1>
+      <a href="/#/">All</a>
+      <a href="/#/pending">Pending</a>
+      <a href="/#/done">Done</a>
+      <hr>
+    </header>
+    <ng-view></ng-view>
+    <footer><hr>Footer</footer>
 
     <script src="node_modules/angular/angular.js"></script>
+    <script src="node_modules/angular-route/angular-route.js"></script>
     <script src="js/app.js"></script>
     <script src="js/controllers/TodoCtrl.js"></script>
     <script src="js/directives/todoItem.js"></script>
@@ -23,5 +30,6 @@
     <script src="js/directives/todoText.js"></script>
     <script src="js/filters/dateKo.js"></script>
     <script src="js/filters/timeKo.js"></script>
+    <script src="js/services/todoStorage.js"></script>
   </body>
 </html>

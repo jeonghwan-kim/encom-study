@@ -13,7 +13,7 @@ angular.module('todomvc').directive('todoItem', ($filter) => {
       <button ng-click="onRemove({todo: data})">Remove</button>
       `,
     link: (scope) => {
-      scope.createdAt2 = ()=> [
+      scope.createdAt2 = () => [
         $filter('dateKo')(scope.data.createdAt),
         $filter('timeKo')(scope.data.createdAt)
       ].join(' ');

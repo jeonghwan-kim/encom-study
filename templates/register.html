@@ -1,0 +1,10 @@
+<h1>Register</h1>
+<form name="registerForm" ng-submit="register(email, password, password1)">
+  <input type="email" placeholder="email" name="email" ng-model="email"/>
+  <input type="password" placeholder="password" name="password" ng-model="password"/>
+  <input type="password" placeholder="password1" name="password1" ng-model="password1"/>
+  <input type="submit" value="register" />
+</form>
+<p>
+  {{msg}}
+</p>

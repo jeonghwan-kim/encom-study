@@ -9,11 +9,14 @@
     </style>
   </head>
   <body>
-    <header>
+    <header ng-controller="MenuCtrl">
       <h1>Todo App</h1>
-      <a href="/#/">All</a>
-      <a href="/#/pending">Pending</a>
-      <a href="/#/done">Done</a>
+      <a href="/">All</a>
+      <a href="/pending">Pending</a>
+      <a href="/done">Done</a>
+      <span ng-if="isLogin()">
+        <a href="#" ng-click="logout()">logout</a>
+      </span>
       <hr>
     </header>
     <ng-view></ng-view>
@@ -21,8 +24,12 @@
 
     <script src="node_modules/angular/angular.js"></script>
     <script src="node_modules/angular-route/angular-route.js"></script>
+    <script src="node_modules/angular-cookies/angular-cookies.js"></script>
     <script src="js/app.js"></script>
     <script src="js/controllers/TodoCtrl.js"></script>
+    <script src="js/controllers/LoginCtrl.js"></script>
+    <script src="js/controllers/MenuCtrl.js"></script>
+    <script src="js/controllers/RegisterCtrl.js"></script>
     <script src="js/directives/todoItem.js"></script>
     <script src="js/directives/todoForm.js"></script>
     <script src="js/directives/todoFilters.js"></script>
@@ -31,5 +38,6 @@
     <script src="js/filters/dateKo.js"></script>
     <script src="js/filters/timeKo.js"></script>
     <script src="js/services/todoStorage.js"></script>
+    <script src="js/services/user.js"></script>
   </body>
 </html>

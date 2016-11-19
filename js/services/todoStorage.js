@@ -2,7 +2,7 @@ angular.module('todomvc').factory('todoStorage', ($http) => {
   const storage = {
     _todos: [],
     get: () => {
-      $http.get('http://localhost:3002/v1/todos')
+      $http.get(`http://localhost:3002/v1/todos`)
            .then(res=> angular.copy(res.data, storage._todos))
            .catch(err=> angular.copy([], storage._todos));
       return storage._todos;

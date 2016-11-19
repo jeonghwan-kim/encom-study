@@ -24,6 +24,7 @@ angular.module('todomvc').directive('todoForm', ($http) => {
        scope.create = newTodoTitle => {
          scope.onCreate({title: newTodoTitle});
          scope.newTodoTitle = '';
+         scope.todoForm.$setPristine();
        }
      }
   }
